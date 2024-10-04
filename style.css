@@ -1,6 +1,9 @@
 .not-clickable {
     opacity: 25%;
 }
+.clickable{
+    opacity: 100%;
+}
 
 
 
