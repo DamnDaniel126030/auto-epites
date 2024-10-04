@@ -1,11 +1,7 @@
 import './style.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-<<<<<<< HEAD
-
-=======
 document.addEventListener("DOMContentLoaded", ()=>{
->>>>>>> 78c4977 (asd)
 
 
     const tbody = document.getElementById("tbody");
