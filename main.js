@@ -14,34 +14,34 @@ document.addEventListener("DOMContentLoaded", ()=>{
     }
 
 
-    function tbodyCreate(elements){
-        let element = "";
+    // function tbodyCreate(elements){
+    //     let element = "";
 
-        elements.forEach(item => {
-            let items = `
+    //     elements.forEach(item => {
+    //         let items = `
             
-             <tr >
-              <td class="text-start">
-                <button><img src="${}"> </button>
-              </td>
-              <td class="text-start">
-                 <button><img src="${}"> </button>
-              </td>
-              <td class="text-end">
-                ${}
-              </td>
-              <td class="text-center">
-                <button>X</button>
-              </td>
-            </tr>
-            `
+    //          <tr >
+    //           <td class="text-start">
+    //             <button><img src="${}"> </button>
+    //           </td>
+    //           <td class="text-start">
+    //              <button><img src="${}"> </button>
+    //           </td>
+    //           <td class="text-end">
+    //             ${}
+    //           </td>
+    //           <td class="text-center">
+    //             <button>X</button>
+    //           </td>
+    //         </tr>
+    //         `
 
-            element += item;
-        });
+    //         element += item;
+    //     });
 
-        tbody.innerHTML += element;
+    //     tbody.innerHTML += element;
         
-    }
+    // }
 
 
 })

@@ -1,8 +1,8 @@
-const { rejects } = require('assert');
-const { log } = require('console');
-const fs = require('fs');
-const { resolve } = require('path');
-const { json } = require('stream/consumers');
+import { rejects } from 'assert';
+import { log } from 'console';
+import { readdir, writeFile } from 'fs';
+import { resolve } from 'path';
+import { json } from 'stream/consumers';
 
 
 const folderNameParts = "./subaru_kepek";
@@ -17,7 +17,7 @@ let partImages = [];
 
 function readDirectory(folderName){
     return new Promise((resolve, rejects) => {
-        fs.readdir(folderName, (error, fileNames) => {
+        readdir(folderName, (error, fileNames) => {
             if (error) {
                 rejects(error)
             }
@@ -33,6 +33,11 @@ readDirectory(folderNameParts)
     for (let name of fileNames){
         partImages.push(name);
     }
+    // for (let i = 0; i < fileNames.length; i++) {
+    //     if (fileNames[i].startsWith(i + 1)) {
+    //         partImages.push(fileNames[i])
+    //     };
+    // };
     console.log("OK");
     writeJSONsParts();
 })
@@ -64,7 +69,7 @@ function writeJSONsParts(){
 
 function writeJSONFile (filePath, data){
     return new Promise((resolve, rejects) => {
-        fs.writeFile(filePath, data, (error) => {
+        writeFile(filePath, data, (error) => {
             if (error){
                 rejects(error);
             }
