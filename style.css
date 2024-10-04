@@ -3,10 +3,14 @@
 }
 
 
-img {
-    width: 300px;
-}
+
 
 button{
-    width: 300px;
+    padding: 0;
+}
+img{
+    padding: 0px;
+    border: var(--bs-border-width) solid var(--bs-border-color);
+    max-width: 100px;
+    height: 100px;
 }

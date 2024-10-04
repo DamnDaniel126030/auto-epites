@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
           let items = `
             <tr>
               <td>
-                <button><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
+                <button ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
               </td>
               <td>
-                 <button><img src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
+                 <button><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
               </td>
               <td id="price">
                 0
