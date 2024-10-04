@@ -33,11 +33,7 @@ readDirectory(folderNameParts)
     for (let name of fileNames){
         partImages.push(name);
     }
-    // for (let i = 0; i < fileNames.length; i++) {
-    //     if (fileNames[i].startsWith(i + 1)) {
-    //         partImages.push(fileNames[i])
-    //     };
-    // };
+    
     console.log("OK");
     writeJSONsParts();
 })
