@@ -1,4 +1,4 @@
-.not-clickable {
+.clickable {
     opacity: 25%;
 }
 
@@ -15,4 +15,8 @@ img{
     padding: 0px;
     max-width: 100px;
     height: 100px;
+}
+
+.not-clickable {
+    opacity: 100%;
 }

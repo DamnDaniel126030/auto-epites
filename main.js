@@ -23,10 +23,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
           let items = `
             <tr>
               <td class="text-center">
-                <button id="${elements[i].id}" class="not-clickable" disable  onclick="selectFunction('${elements[i].id}','${elements[i].price}'); return false" ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
+                <button id="${elements[i].id}" class="not-clickable" disabled onclick="selectFunction('${elements[i].id}','${elements[i].price}'); return false" ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
               </td>
               <td class="text-start">
-                 <button id="${elements[i+1].id}"  onclick="selectFunction('${elements[i+1].id}','${elements[i+1].price}')"><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
+                 <button id="${elements[i+1].id}" class="clickable"   onclick="selectFunction('${elements[i+1].id}','${elements[i+1].price}')"><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
               </td>
               
               <td>
@@ -45,44 +45,33 @@ document.addEventListener("DOMContentLoaded", ()=>{
         tbody.innerHTML += element;
        
     }
-
     
 
-    getJson();
-
-
-    
-    function selectFunction(idButton, price){
+    function selectFunction(idButton, price) {
       
-      let button = document.getElementById(idButton+"")
-      if(idButton % 2 != 0 ){
-        button.disabled=true;
-        button.classList.toggle("not-clickable");
-        idButton++;
-        button = document.getElementById(idButton+"");
-        button.disabled= false;
-        button.classList.toggle("clickable");
-        
-        
-      }
-      else if(idButton % 2 == 0){
-        button.disabled=true;
-        button.classList.toggle("not-clickable");
-        idButton--;
-        button = document.getElementById(idButton+"");
-        button.disabled= false;
-        button.classList.toggle("clickable");
-        
-      }
-
-      
-     
-     
-      
+      if (idButton % 2 == 0) {
+        let buttonChosen = document.getElementById(idButton.toString());
+        let buttonNotChosen = document.getElementById((idButton - 1).toString());
+        buttonChosen.disabled = true;
+        buttonChosen.classList.remove("clickable");
+        buttonChosen.classList.add("not-clickable");
+        buttonNotChosen.disabled = false;
+        buttonNotChosen.classList.remove("not-clickable");
+        buttonNotChosen.classList.add("clickable");
+      };
+      if (idButton % 2 != 0) {
+        let buttonChosen = document.getElementById(idButton.toString());
+        idButton++
+        let buttonNotChosen = document.getElementById((idButton).toString())
+        buttonChosen.disabled = true;
+        buttonChosen.classList.remove("clickable");
+        buttonChosen.classList.add("not-clickable");
+        buttonNotChosen.disabled = false;
+        buttonNotChosen.classList.remove("not-clickable");
+        buttonNotChosen.classList.add("clickable");
+      };
     }
     
-
-
     window.selectFunction = selectFunction;
 
 })
