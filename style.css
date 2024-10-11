@@ -7,8 +7,13 @@ button{
     border: none;
 }
 .headerImg{
-    max-width: 100%;
+    max-width: 68%;
     height: 100%;
+}
+
+
+#headerImg {
+    text-align: center;
 }
 
 img{
@@ -24,8 +29,13 @@ img{
 #navi {
     background-color: rgb(201, 50, 26);
     font-weight: bold;
+    border-bottom: 4px solid rgb(224, 117, 9);
 }
 
 .navbar-brand {
     color: white;
+}
+
+body {
+    background: linear-gradient(red,rgb(224, 117, 9))
 }
