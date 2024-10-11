@@ -20,3 +20,12 @@ img{
 .not-clickable {
     opacity: 100%;
 }
+
+#navi {
+    background-color: rgb(201, 50, 26);
+    font-weight: bold;
+}
+
+.navbar-brand {
+    color: white;
+}
