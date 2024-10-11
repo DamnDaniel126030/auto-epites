@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const goBackButton = document.getElementById("goBack");
     const payCard = document.getElementById("payCard");
     const finalPriceCell = document.getElementById("finalPrice");
+    const payButton = document.getElementById("pay");
     let finalPrice = 0;
     const secondPrice= [];
     
@@ -125,6 +126,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
       titleImage.classList.remove("d-none");
       submitButton.classList.remove("d-none");
       payCard.classList.add("d-none")
+      finalPriceMessage.textContent = "Fizetendő összeg: "
+    })
+
+    payButton.addEventListener("click", () =>{
+      finalPriceMessage.textContent = "Sikeres fizetés!"
+      goBackButton.classList.add("d-none")
+      payButton.classList.add("d-none")
     })
 
 })
