@@ -5,7 +5,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
     const tbody = document.getElementById("tbody");
     const table = document.getElementById("table");
+    const mainForm = document.getElementById("mainForm");
+    const submitButton = document.getElementById("submitButton");
     const titleImage = document.getElementById("titleImage");
+    const goBackButton = document.getElementById("goBack");
+    const payCard = document.getElementById("payCard");
     const finalPriceCell = document.getElementById("finalPrice");
     let finalPrice = 0;
     const secondPrice= [];
@@ -105,6 +109,23 @@ document.addEventListener("DOMContentLoaded", ()=>{
     
     window.selectFunction = selectFunction;
     window.changePrice = changePrice;
+
+
+    mainForm.addEventListener("submit", e => {
+      e.preventDefault();
+      payCard.classList.remove("d-none")
+      table.classList.add("d-none");
+      titleImage.classList.add("d-none");
+      submitButton.classList.add("d-none");
+      finalPriceMessage.textContent += finalPrice;
+    })
+
+    goBackButton.addEventListener("click", () => {
+      table.classList.remove("d-none");
+      titleImage.classList.remove("d-none");
+      submitButton.classList.remove("d-none");
+      payCard.classList.add("d-none")
+    })
 
 })
 
