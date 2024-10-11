@@ -51,10 +51,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         }
         finalPriceCell.textContent = "Végösszeg: " + finalPrice + "Ft";
         tbody.innerHTML += element;
-        secondPrice.forEach(element => {
-          
-        console.log(element);
-        });
+        
         
        
     }
@@ -80,14 +77,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.classList.add("clickable");
         priceChosen.textContent = "+" + price + "Ft"
         
-        console.log(price);
-        console.log(anotherPrice);
         
-        changePrice(price);
+        changePrice(anotherPrice);
       }
       if (idButton % 2 != 0) {
-        console.log(price);
-        
         const buttonChosen = document.getElementById(idButton.toString());
         idButton++
         const buttonNotChosen = document.getElementById((idButton).toString())
@@ -101,11 +94,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         priceChosen.textContent = "+" + price + "Ft"
         secondPrice.forEach(element => {
             if(element == anotherPrice){
-
+              console.log(anotherPrice);
               changePrice(-element) 
             }
              
-           /*  secondPrice.filter(s => s != price) */
+          
             
             
 
