@@ -98,13 +98,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               console.log(anotherPrice);
               changePrice(-element) 
             }
-             
-          
-            
-            
-
-          
-        
         });
       };
     }
