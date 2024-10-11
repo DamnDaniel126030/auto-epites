@@ -7,7 +7,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const titleImage = document.getElementById("titleImage");
     const finalPriceCell = document.getElementById("finalPrice");
     let finalPrice = 0;
-
+    const secondPrice= [{
+      id: 0,
+      price: 0,
+    }]
     
     const firstButton = document.getElementById("firstButton");
     const secondButton = document.getElementById("secondButton");
@@ -38,7 +41,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
               </td>
             </tr>
           `
-          console.log(rowNumber);
           rowNumber++
           element += items;
           finalPrice += elements[i].price;
@@ -69,6 +71,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
         priceChosen.textContent = "+" + price + "Ft"
+        console.log(idButton);
+        console.log(price);
+        console.log(rowNumber);
+        secondPrice.push(id = idButton, price = price)
         changePrice(price);
       }
       if (idButton % 2 != 0) {
@@ -83,7 +89,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
         priceChosen.textContent = "+" + price + "Ft"
-        changePrice(price);
+        secondPrice.forEach(element => {
+          if(element.id == idButton ){
+            changePrice(-element.price)
+          }
+        });
       };
     }
 
