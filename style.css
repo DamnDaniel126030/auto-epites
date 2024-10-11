@@ -5,6 +5,9 @@
 button{
     padding: 0;
     border: none;
+    color: #adadad !important;
+    font-weight: bold !important;
+    font-size: large !important;
 }
 .headerImg{
     max-width: 100%;
@@ -30,26 +33,33 @@ img{
 #navi {
     background-color: #00498c;
     font-weight: bold;
-    border-bottom: 4px solid #cccccc;
+    border-bottom: 4px solid #adadad;
+    color: #adadad;
 }
 
 .navbar-brand {
-    color: white;
+    color: #adadad !important;
 }
 
 body {
-    background: linear-gradient(rgb(3, 122, 196),rgb(4, 0, 128))
+    background: linear-gradient(rgb(3, 122, 196),rgb(4, 0, 128));
+    color: #adadad;
+    
 }
 
 table {
-    border: 6px solid #cccccc;
-    color: #cccccc;
+    border-bottom: 6px solid #adadad !important;
+    border-left: 6px solid #adadad !important;
+    border-right: 6px solid #adadad !important;
+
     
 }
 
-td {
-    background: linear-gradient(rgb(4,0,128), rgb(3,122,196));
+td , th {
+    background-color: #004d8f !important;
+    color: #adadad !important;
     
 }
+
 
 
