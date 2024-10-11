@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
     const payCard = document.getElementById("payCard");
     const finalPriceCell = document.getElementById("finalPrice");
     let finalPrice = 0;
-    const secondPrice= [];
+    const  secondPrice= [];
+    const thirdPrice = [];
     
     const firstButton = document.getElementById("firstButton");
     const secondButton = document.getElementById("secondButton");
@@ -32,10 +33,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
             <tr>
               <td></td>
               <td class="text-center">
-                <button id="${elements[i].id}" class="not-clickable" disabled onclick="selectFunction('${elements[i].id}','${elements[i].price}', '${rowNumber}'); return false" ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
+                <button id="${elements[i].id}" class="not-clickable" disabled onclick="selectFunction('${elements[i].id}','${elements[i].price}', '${elements[i+1].price}', '${rowNumber}'); return false" ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
               </td>
               <td class="text-start">
-                 <button id="${elements[i+1].id}" class="clickable" onclick="selectFunction('${elements[i+1].id}','${elements[i+1].price}', '${rowNumber}')"><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
+                 <button id="${elements[i+1].id}" class="clickable" onclick="selectFunction('${elements[i+1].id}', '${elements[i].price}','${elements[i+1].price}', '${rowNumber}')"><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
               </td>
               <td class="text-start">
                 <span id="${rowNumber}">+${elements[i].price}Ft</span>
@@ -45,15 +46,21 @@ document.addEventListener("DOMContentLoaded", ()=>{
           rowNumber++
           element += items;
           finalPrice += elements[i].price;
-          
+          secondPrice.push(elements[i+1].price);
+
         }
         finalPriceCell.textContent = "Végösszeg: " + finalPrice + "Ft";
         tbody.innerHTML += element;
+        secondPrice.forEach(element => {
+          
+        console.log(element);
+        });
+        
        
     }
     
 
-    function selectFunction(idButton, price, rowNumber) {
+    function selectFunction(idButton, price, anotherPrice, rowNumber) {
       if (idButton == 2){
         titleImage.src = './feketeKocsi.png';
       }
@@ -72,10 +79,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
         priceChosen.textContent = "+" + price + "Ft"
-        secondPrice.push(price)
+        
+        console.log(price);
+        console.log(anotherPrice);
+        
         changePrice(price);
       }
       if (idButton % 2 != 0) {
+        console.log(price);
+        
         const buttonChosen = document.getElementById(idButton.toString());
         idButton++
         const buttonNotChosen = document.getElementById((idButton).toString())
@@ -88,15 +100,17 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.classList.add("clickable");
         priceChosen.textContent = "+" + price + "Ft"
         secondPrice.forEach(element => {
-          console.log(element);
-          console.log(price);
-          
-          if(element == price){
+            if(element == anotherPrice){
 
-            changePrice(-element)
+              changePrice(-element) 
+            }
+             
+           /*  secondPrice.filter(s => s != price) */
             
-            return
-          }
+            
+
+          
+        
         });
       };
     }
