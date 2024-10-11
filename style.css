@@ -28,9 +28,9 @@ img{
 }
 
 #navi {
-    background-color: rgb(201, 50, 26);
+    background-color: #00498c;
     font-weight: bold;
-    border-bottom: 4px solid rgb(224, 117, 9);
+    border-bottom: 4px solid #cccccc;
 }
 
 .navbar-brand {
@@ -38,5 +38,18 @@ img{
 }
 
 body {
-    background: linear-gradient(red,rgb(224, 117, 9))
+    background: linear-gradient(rgb(3, 122, 196),rgb(4, 0, 128))
 }
+
+table {
+    border: 6px solid #cccccc;
+    color: #cccccc;
+    
+}
+
+td {
+    background: linear-gradient(rgb(4,0,128), rgb(3,122,196));
+    
+}
+
+
