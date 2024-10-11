@@ -25,18 +25,15 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let element = "";
         for (let i = 0; i < elements.length; i += 2) {
           let items = `
-            <tr >
+            <tr>
+              <td></td>
               <td class="text-center">
                 <button id="${elements[i].id}" class="not-clickable" disabled onclick="selectFunction('${elements[i].id}','${elements[i].price}', '${rowNumber}'); return false" ><img src="${'./subaru_kepek/' + elements[i].imgName}"></button>
               </td>
               <td class="text-start">
                  <button id="${elements[i+1].id}" class="clickable" onclick="selectFunction('${elements[i+1].id}','${elements[i+1].price}', '${rowNumber}')"><img  src="${'./subaru_kepek/' + elements[i + 1].imgName}"> </button>
               </td>
-              
-              <td>
-                <input type="checkbox" id="nothingCheckbox"></input>Nothing
-              </td>
-              <td>
+              <td class="text-start">
                 <span id="${rowNumber}">+${elements[i].price}Ft</span>
               </td>
             </tr>
@@ -71,8 +68,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.disabled = false;
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
-        console.log(rowNumber);
-        console.log(priceChosen);
         priceChosen.textContent = "+" + price + "Ft"
         changePrice(price);
       }
@@ -87,8 +82,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.disabled = false;
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
-        console.log(rowNumber);
-        console.log(priceChosen);
         priceChosen.textContent = "+" + price + "Ft"
         changePrice(price);
       };
