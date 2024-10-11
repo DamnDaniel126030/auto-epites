@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 document.addEventListener("DOMContentLoaded", ()=>{
 
     const tbody = document.getElementById("tbody");
+    const table = document.getElementById("table");
     const titleImage = document.getElementById("titleImage");
     const finalPriceCell = document.getElementById("finalPrice");
     let finalPrice = 0;
@@ -18,7 +19,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         .then((response) => response.json())
         .then((json) => tbodyCreate(json));
     }
-
 
     function tbodyCreate(elements){
         let rowNumber = 21;
