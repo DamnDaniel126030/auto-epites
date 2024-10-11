@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
         buttonNotChosen.disabled = false;
         buttonNotChosen.classList.remove("not-clickable");
         buttonNotChosen.classList.add("clickable");
-        priceChosen.textContent = "+" + price + "Ft"
+        priceChosen.textContent = "+" + anotherPrice + "Ft"
         
         
         changePrice(anotherPrice);
